@@ -8,29 +8,48 @@
 </head>
 <body>
     <div id="container">
-        <div id="display">9001</div>
+        <div id="display"><span>9001</span></div>
         <div id="buttons">
             <div id="operands">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
+                <div class="col">
+                    <button>+</button>
+                    <button>-</button>
+                    <button>*</button>
+                    <button>/</button>
+                </div>
+                <div class="col">
+                    
+                </div>
+                <div class="col">
+                    
+                </div>
+                <div class="col">
+                    
+                </div>
             </div>
             <div id="numpad">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>0</button>
+                <div class="col">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
+                <div class="col">
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                </div>
+                <div class="col">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+                <div class="col">
+                    <button>0</button>
+                </div>
             </div>
         </div>
         <div id="evaluate">
-            <button>=</button>
+            <button id="evalButton">=</button>
         </div>
     </div>
     <script src="script.js"></script>
