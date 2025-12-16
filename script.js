@@ -16,3 +16,7 @@ function divide(a, b) {
     };
     return a / b;
 };
+
+let firstNumber;
+let operand;
+let secondNumber;
