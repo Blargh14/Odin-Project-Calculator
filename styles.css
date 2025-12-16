@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+#container {
+    border-style: solid;
+    border-color: black;
+    background-color: lightgray;
+    display: flex;
+    aspect-ratio: 4/3;
+    max-height: calc(100vh - 10px);
+    flex-direction: column;
+}
+
+#display {
+    flex-grow: 1;
+    background-color: white;
+    text-align: right;
+    align-content: center;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 4;
+}
+
+#evaluate {
+    flex-grow: 1;
+}
