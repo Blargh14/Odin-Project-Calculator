@@ -72,7 +72,7 @@ function press(event) {
         }
     }
     else {
-        if (selection === "=") {
+        if (selection === "=" || selection === "Enter") {
             if (!firstNumber || !secondNumber) {
                 return;
             }
