@@ -39,8 +39,8 @@ body {
     flex-grow: 1;
 }
 
-#decimal {
-    width: 25%;
+#extra {
+    width: 50%;
     align-self: center;
 }
 
