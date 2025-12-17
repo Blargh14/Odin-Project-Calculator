@@ -12,7 +12,11 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (b === 0) {
-        return "Cannot divide by 0";
+        firstNumber = "";
+        operand = "";
+        secondNumber = "";
+        display.textContent = "Cannot divide by 0";
+        return null;
     };
     return a / b;
 };
@@ -52,6 +56,7 @@ body.addEventListener("click", event => {
         }
         else if (secondNumber) {
             result = operate(operand, Number(firstNumber), Number(secondNumber));
+            if (typeof result != 'number') {return};
             result = Math.round((result + Number.EPSILON) * 10000000000) / 10000000000
             display.textContent = result;
             operand = selection;
@@ -68,6 +73,7 @@ body.addEventListener("click", event => {
                 return;
             }
             result = operate(operand, Number(firstNumber), Number(secondNumber));
+            if (typeof result != 'number') {return};
             result = Math.round((result + Number.EPSILON) * 10000000000) / 10000000000
             display.textContent = result;
             operand = "";
