@@ -49,6 +49,7 @@ body.addEventListener("click", press);
 document.addEventListener("keydown", press);
 
 function press(event) {
+    event.preventDefault();
     firstNumber = firstNumber === 0 ? "0" : firstNumber;
     secondNumber = secondNumber === 0 ? "0" : secondNumber;
     selection = event.key ? event.key : event.target.textContent;
