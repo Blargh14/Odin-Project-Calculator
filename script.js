@@ -86,6 +86,12 @@ body.addEventListener("click", event => {
             secondNumber = "";
             display.textContent = "-";
         }
+        else if (selection === ".") {
+            if (display.textContent.includes(".") && !(operand && !secondNumber) && firstNumber) {
+                return;
+            }
+            display.textContent = appendNumber(".");
+        }
     }
 });
 
