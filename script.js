@@ -78,7 +78,7 @@ body.addEventListener("click", event => {
             display.textContent = result;
             operand = "";
             secondNumber = "";
-            firstNumber = result;
+            firstNumber = "";
         }
         else if (selection === "C") {
             firstNumber = "";
