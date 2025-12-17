@@ -49,8 +49,9 @@ body.addEventListener("click", press);
 document.addEventListener("keydown", press);
 
 function press(event) {
+    firstNumber = firstNumber === 0 ? "0" : firstNumber;
+    secondNumber = secondNumber === 0 ? "0" : secondNumber;
     selection = event.key ? event.key : event.target.textContent;
-    console.log(selection);
     if ("0123456789".includes(selection)) {
         display.textContent = appendNumber(selection);
     }
