@@ -39,6 +39,11 @@ body {
     flex-grow: 1;
 }
 
+#decimal {
+    width: 25%;
+    align-self: center;
+}
+
 #buttons button {
     flex-grow: 1;
     margin: 1px;
