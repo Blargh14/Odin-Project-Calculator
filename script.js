@@ -34,6 +34,30 @@ function operate(o, a, b) {
     }
 };
 
-let firstNumber;
+let firstNumber = "";
 let operand;
-let secondNumber;
+let secondNumber = "";
+
+body = document.querySelector("body");
+display = document.querySelector("#display");
+
+body.addEventListener("click", event => {
+    selection = event.target.textContent;
+    if ("0123456789".includes(selection)) {
+        display.textContent = appendNumber(selection);
+    }
+    else if ("+-*/".includes(selection)) {
+        
+    }
+});
+
+function appendNumber(num) {
+    if (operand) {
+        secondNumber += num;
+        return secondNumber;
+    }
+    else {
+        firstNumber += num;
+        return firstNumber;
+    }
+};
