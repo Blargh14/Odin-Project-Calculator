@@ -47,7 +47,39 @@ body.addEventListener("click", event => {
         display.textContent = appendNumber(selection);
     }
     else if ("+-*/".includes(selection)) {
-        
+        if (!firstNumber) {
+            return;
+        }
+        else if (secondNumber) {
+            result = operate(operand, Number(firstNumber), Number(secondNumber));
+            result = Math.round((result + Number.EPSILON) * 10000000000) / 10000000000
+            display.textContent = result;
+            operand = selection;
+            secondNumber = "";
+            firstNumber = result;
+        }
+        else {
+            operand = selection;
+        }
+    }
+    else {
+        if (selection === "=") {
+            if (!firstNumber || !secondNumber) {
+                return;
+            }
+            result = operate(operand, Number(firstNumber), Number(secondNumber));
+            result = Math.round((result + Number.EPSILON) * 10000000000) / 10000000000
+            display.textContent = result;
+            operand = "";
+            secondNumber = "";
+            firstNumber = result;
+        }
+        else if (selection === "C") {
+            firstNumber = "";
+            operand = "";
+            secondNumber = "";
+            display.textContent = "-";
+        }
     }
 });
 
