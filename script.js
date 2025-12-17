@@ -45,8 +45,12 @@ let secondNumber = "";
 body = document.querySelector("body");
 display = document.querySelector("#display");
 
-body.addEventListener("click", event => {
-    selection = event.target.textContent;
+body.addEventListener("click", press);
+document.addEventListener("keydown", press);
+
+function press(event) {
+    selection = event.key ? event.key : event.target.textContent;
+    console.log(selection);
     if ("0123456789".includes(selection)) {
         display.textContent = appendNumber(selection);
     }
@@ -80,7 +84,7 @@ body.addEventListener("click", event => {
             secondNumber = "";
             firstNumber = "";
         }
-        else if (selection === "C") {
+        else if (selection === "C" || selection === "c" || selection === "Delete") {
             firstNumber = "";
             operand = "";
             secondNumber = "";
@@ -92,11 +96,11 @@ body.addEventListener("click", event => {
             }
             display.textContent = appendNumber(".");
         }
-        else if (selection === "←") {
+        else if (selection === "←" || selection === "Backspace") {
             display.textContent = backspace();
         }
     }
-});
+};
 
 function appendNumber(num) {
     if (operand) {
