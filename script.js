@@ -92,6 +92,9 @@ body.addEventListener("click", event => {
             }
             display.textContent = appendNumber(".");
         }
+        else if (selection === "←") {
+            display.textContent = backspace();
+        }
     }
 });
 
@@ -103,5 +106,29 @@ function appendNumber(num) {
     else {
         firstNumber += num;
         return firstNumber;
+    }
+};
+
+function backspace(num) {
+    if (!firstNumber) {
+        return "-";
+    }
+    if (operand) {
+        secondNumber= secondNumber.slice(0, -1)
+        if (secondNumber) {
+            return secondNumber;
+        }
+        else {
+            return "-";
+        }
+    }
+    else {
+        firstNumber = firstNumber.slice(0, -1);
+        if (firstNumber) {
+            return firstNumber;
+        }
+        else {
+            return "-";
+        }
     }
 };
